@@ -1,0 +1,556 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY localLibrary "http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#"
+     xml:base="http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:localLibrary="http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary">
+        <rdfs:comment rdf:datatype="&xsd;string">Local Library Ontology</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;hasAuthor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#hasBook -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;hasBook"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;hasGenre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;hasLocation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#hasPublisher -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;hasPublisher"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#includesBook -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;includesBook"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isAuthorOf">
+        <owl:inverseOf rdf:resource="&localLibrary;hasAuthor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isBookOf -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isBookOf">
+        <owl:inverseOf rdf:resource="&localLibrary;hasBook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isGenreOf -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isGenreOf">
+        <owl:inverseOf rdf:resource="&localLibrary;hasGenre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isIncludedInGenre -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isIncludedInGenre">
+        <owl:inverseOf rdf:resource="&localLibrary;includesBook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isLocationOf">
+        <owl:inverseOf rdf:resource="&localLibrary;hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isPublishedBy -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isPublishedBy">
+        <owl:inverseOf rdf:resource="&localLibrary;publishesBook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isPublisherOf -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isPublisherOf">
+        <owl:inverseOf rdf:resource="&localLibrary;hasPublisher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#isWrittenBy -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;isWrittenBy">
+        <owl:inverseOf rdf:resource="&localLibrary;writesBook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#publishesBook -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;publishesBook"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#writesBook -->
+
+    <owl:ObjectProperty rdf:about="&localLibrary;writesBook"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#ISBN -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;ISBN">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#aisleNumber -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;aisleNumber">
+        <rdfs:domain rdf:resource="&localLibrary;Location"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#authorName -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;authorName">
+        <rdfs:domain rdf:resource="&localLibrary;Author"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;birthDate">
+        <rdfs:domain rdf:resource="&localLibrary;Author"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#format -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;format">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#genreName -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;genreName">
+        <rdfs:domain rdf:resource="&localLibrary;Genre"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#language -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;language">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#nationality -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;nationality">
+        <rdfs:domain rdf:resource="&localLibrary;Author"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#numberOfPages -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;numberOfPages">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#publicationDate -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;publicationDate">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#publisherLocation -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;publisherLocation">
+        <rdfs:domain rdf:resource="&localLibrary;Publisher"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#publisherName -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;publisherName">
+        <rdfs:domain rdf:resource="&localLibrary;Publisher"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#sectionName -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;sectionName">
+        <rdfs:domain rdf:resource="&localLibrary;Location"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#shelfNumber -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;shelfNumber">
+        <rdfs:domain rdf:resource="&localLibrary;Location"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#title -->
+
+    <owl:DatatypeProperty rdf:about="&localLibrary;title">
+        <rdfs:domain rdf:resource="&localLibrary;Book"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Author -->
+
+    <owl:Class rdf:about="&localLibrary;Author">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;writesBook"/>
+                <owl:someValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Book -->
+
+    <owl:Class rdf:about="&localLibrary;Book">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;hasGenre"/>
+                <owl:someValuesFrom rdf:resource="&localLibrary;Genre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;hasPublisher"/>
+                <owl:allValuesFrom rdf:resource="&localLibrary;Publisher"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;hasLocation"/>
+                <owl:allValuesFrom rdf:resource="&localLibrary;Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;hasAuthor"/>
+                <owl:someValuesFrom rdf:resource="&localLibrary;Author"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Fiction -->
+
+    <owl:Class rdf:about="&localLibrary;Fiction">
+        <rdfs:subClassOf rdf:resource="&localLibrary;Book"/>
+        <owl:disjointWith rdf:resource="&localLibrary;NonFiction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Genre -->
+
+    <owl:Class rdf:about="&localLibrary;Genre">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;includesBook"/>
+                <owl:allValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;isGenreOf"/>
+                <owl:allValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Location -->
+
+    <owl:Class rdf:about="&localLibrary;Location">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;hasBook"/>
+                <owl:someValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;isLocationOf"/>
+                <owl:allValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#NonFiction -->
+
+    <owl:Class rdf:about="&localLibrary;NonFiction">
+        <rdfs:subClassOf rdf:resource="&localLibrary;Book"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Publisher -->
+
+    <owl:Class rdf:about="&localLibrary;Publisher">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&localLibrary;publishesBook"/>
+                <owl:someValuesFrom rdf:resource="&localLibrary;Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Bloomsburry -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Bloomsburry">
+        <rdf:type rdf:resource="&localLibrary;Publisher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Children -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Children">
+        <rdf:type rdf:resource="&localLibrary;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Education -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Education"/>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Fiction -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Fiction">
+        <rdf:type rdf:resource="&localLibrary;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Harry_Potter -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Harry_Potter">
+        <rdf:type rdf:resource="&localLibrary;Book"/>
+        <rdf:type rdf:resource="&localLibrary;Fiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#J.K_Rowling -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;J.K_Rowling">
+        <rdf:type rdf:resource="&localLibrary;Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Non-Fiction -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Non-Fiction">
+        <rdf:type rdf:resource="&localLibrary;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#O_Reilly -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;O_Reilly">
+        <rdf:type rdf:resource="&localLibrary;Publisher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Quantum_Physics -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Quantum_Physics">
+        <rdf:type rdf:resource="&localLibrary;Book"/>
+        <rdf:type rdf:resource="&localLibrary;NonFiction"/>
+        <aisleNumber rdf:datatype="&xsd;integer">001</aisleNumber>
+        <shelfNumber rdf:datatype="&xsd;string">A01</shelfNumber>
+        <authorName rdf:datatype="&xsd;string">Stephen Hawkings</authorName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Rheinwerk -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Rheinwerk">
+        <rdf:type rdf:resource="&localLibrary;Publisher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Rich_Dad_Poor_Dad -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Rich_Dad_Poor_Dad">
+        <rdf:type rdf:resource="&localLibrary;Book"/>
+        <rdf:type rdf:resource="&localLibrary;NonFiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Robert_T_Kyosaki -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Robert_T_Kyosaki">
+        <rdf:type rdf:resource="&localLibrary;Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Science -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Science">
+        <rdf:type rdf:resource="&localLibrary;Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Stephen_Hawking -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Stephen_Hawking">
+        <rdf:type rdf:resource="&localLibrary;Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/indradewaji/ontologies/2023/3/localLibrary#Technology -->
+
+    <owl:NamedIndividual rdf:about="&localLibrary;Technology">
+        <rdf:type rdf:resource="&localLibrary;Genre"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
